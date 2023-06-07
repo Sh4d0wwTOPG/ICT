@@ -1,2 +1,2 @@
 # ICT
- Dělám jednoduchou third person hru v Unity 
+ Dělám jednoduchou open world third person hru v Unity 
