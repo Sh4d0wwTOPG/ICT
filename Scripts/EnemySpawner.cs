@@ -51,9 +51,9 @@ public class EnemySpawner : MonoBehaviour {
 
 	
 	public void StartEnemySpawn() {
-		maxSpawnRateInSecond = 5f;    // 重設生怪時間
+		maxSpawnRateInSecond = 5f;    
 		Invoke ("SpawnEnemy", maxSpawnRateInSecond);
-		// 每30秒減少怪物重造時間(PS:第一個是方法名，第二個是「第一次調用」要隔幾秒，第三個是「每隔幾秒調用一次」)
+		
 		InvokeRepeating("IncreseSpawnRate", 0f, 30f);
 	}
 
