@@ -1,2 +1,3 @@
 # ICT
- Dělám jednoduchou hru v Unity (zatím tu nic není ale budu postupně přidávat) 
+ Dělám jednoduchou hru v Unity (hru kterou jsem chtěl udělat jsem nestihl na ní budu pracovat během prázdnin) 
+ 
