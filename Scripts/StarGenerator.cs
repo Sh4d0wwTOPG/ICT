@@ -1,30 +1,31 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class StarGenerator : MonoBehaviour {
-	public GameObject starBg;    // Star prefab
-	public int MaxStars;
+    public GameObject starBg;    // Prefab hvězdy
+    public int maxStars;    // Maximální počet hvězd
 
-	Color[] starColors = {
-		new Color(0.5f, 0.5f, 1f),    //藍
-		new Color(0, 1f, 1f),    //綠
-		new Color(1f, 1f, 0),    //黃
-		new Color(1f, 0, 0)    //紅
-	};
-	// Use this for initialization
-	void Start () {
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));    // 左下
-		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));    // 右上
-		for ( int i=0; i<MaxStars; ++i) {
-			GameObject star = (GameObject)Instantiate (starBg);
-			star.GetComponent<SpriteRenderer> ().color = starColors [Random.Range (0, 3)];    // 顏色
-			star.transform.position = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));    // 位置
-			star.GetComponent<Stars>().speed = -(1f * Random.value + 0.5f);    // 速度
-			star.transform.parent = transform;    // 將生產出來的星星作為生產器的孩子
-		}	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+    Color[] starColors = {
+        new Color(0.5f, 0.5f, 1f),    // Modrá
+        new Color(0, 1f, 1f),    // Zelená
+        new Color(1f, 1f, 0),    // Žlutá
+        new Color(1f, 0, 0)    // Červená
+    };
+
+    void Start () {
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));    // Levý dolní roh
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));    // Pravý horní roh
+
+        for (int i = 0; i < maxStars; ++i) {
+            GameObject star = (GameObject)Instantiate(starBg);
+            star.GetComponent<SpriteRenderer>().color = starColors[Random.Range(0, 3)];    // Nastavení náhodné barvy hvězdy
+            star.transform.position = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));    // Nastavení náhodné pozice hvězdy
+            star.GetComponent<Stars>().speed = -(1f * Random.value + 0.5f);    // Nastavení náhodné rychlosti hvězdy
+            star.transform.parent = transform;    // Nastavení nově vytvořené hvězdy jako dítě generátoru
+        }
+    }
+
+    void Update () {
+        // Prázdná metoda Update, není potřeba pro tento skript
+    }
 }
