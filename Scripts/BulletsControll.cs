@@ -1,4 +1,3 @@
-Copy code
 using UnityEngine;
 using System.Collections;
 
@@ -37,3 +36,4 @@ public class BulletsControll : MonoBehaviour {
         }
     }
 }
+
