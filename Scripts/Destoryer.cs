@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Destoryer : MonoBehaviour {
 
-	void DestoryGameObject() {
-		Destroy (gameObject);
-	}
+    // Metoda pro zničení hry
+    void DestoryGameObject() {
+        Destroy (gameObject);
+    }
 }
